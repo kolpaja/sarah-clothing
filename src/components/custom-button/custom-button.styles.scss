@@ -11,7 +11,7 @@
   text-transform: uppercase;
   font-family: "Open Sans Condensed";
   font-weight: bolder;
-  border: none;
+  border: solid 1px;
   border-radius: 5%;
   cursor: pointer;
 
@@ -19,5 +19,14 @@
     background-color: white;
     color: black;
     border: 1px solid black;
+  }
+  &.google-sign-in {
+    background-color: #4285f4;
+    color: white;
+
+    &:hover {
+      background-color: #357ae8;
+      border: none;
+    }
   }
 }
