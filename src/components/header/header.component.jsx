@@ -4,6 +4,7 @@ import "./header.styles.scss";
 import Logo from "../../assets/sarahs_2.png";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
+import CartIcon from "../cart-icon/cart-icon.component";
 
 const Header = ({ currentUser }) => {
   console.log("currentuser: ", currentUser);
@@ -35,6 +36,7 @@ const Header = ({ currentUser }) => {
             Sign In
           </Link>
         )}
+        <CartIcon />
       </div>
     </div>
   );
