@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./header.styles.scss";
 import { createStructuredSelector } from "reselect";
 
-import Logo from "../../assets/sarahs_2.png";
+import Logo from "../../assets/sarahs-logo.svg";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
 
@@ -16,6 +16,7 @@ const Header = ({ currentUser, hidden }) => (
   <div className="header">
     <Link className="logo-container" to="/">
       <img className="logo" alt="logo" src={Logo} />
+      <figcaption>Sarah's Clothing</figcaption>
     </Link>
     <div className="options">
       <Link className="option" to="/shop">
