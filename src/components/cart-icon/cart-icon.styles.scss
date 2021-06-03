@@ -8,8 +8,16 @@
   cursor: pointer;
 
   .shopping-icon {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
+  }
+
+  &:hover {
+    color: rgb(81, 8, 177);
+  }
+
+  &:active {
+    transform: scale(1.1);
   }
 
   .item-count {
@@ -17,5 +25,6 @@
     font-size: 15px;
     font-weight: bold;
     bottom: 15px;
+    letter-spacing: 1px;
   }
 }

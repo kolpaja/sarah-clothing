@@ -54,7 +54,8 @@ export const addCollectionsAndDocuments = async (
   return await batch.commit();
 };
 
-export const converCollectionSnapshopToMap = (collections) => {
+//this fnx  using snapshot to map over the data of the collections at db to convert it to a object instead of an array
+export const convertCollectionsSnapshopToMap = (collections) => {
   const transformedCollections = collections.docs.map((doc) => {
     const { title, items } = doc.data();
 
@@ -65,7 +66,11 @@ export const converCollectionSnapshopToMap = (collections) => {
       items,
     };
   });
-  console.log("transformedCollections: ", transformedCollections);
+
+  return transformedCollections.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
 };
 
 export const auth = firebase.auth();
