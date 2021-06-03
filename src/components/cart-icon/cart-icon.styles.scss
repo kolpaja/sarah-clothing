@@ -14,10 +14,11 @@
 
   &:hover {
     color: rgb(81, 8, 177);
+    transform: scale(1.2);
   }
 
   &:active {
-    transform: scale(1.1);
+    transform: translate(2px);
   }
 
   .item-count {
