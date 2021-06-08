@@ -25,9 +25,12 @@ export function* fetchCollectionsAsync() {
   }
 }
 
-export function* shopSagas() {
+export function* fetchCollectionsStart() {
   yield takeLatest(
     ShopActionsTypes.FETCH_COLLECTIONS_START,
     fetchCollectionsAsync
   );
+}
+export function* shopSagas() {
+  yield all([call(fetchCollectionsStart)]);
 }

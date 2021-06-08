@@ -10,7 +10,6 @@ import {
 } from "./header.styles";
 
 import Logo from "../../assets/sarahs-logo.svg";
-import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -25,7 +24,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to="/">
       <ImgContainer alt="logo" src={Logo} />
-      <figcaption>Sarah's Clothing</figcaption>
+      <figcaption>Sarah`&apos;`s Clothing</figcaption>
     </LogoContainer>
     <OptionsContainer>
       <OptionLink to="/shop">Shop</OptionLink>
