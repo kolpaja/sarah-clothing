@@ -12,7 +12,7 @@ import {
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   const [userCredeintials, setCredentials] = useState({
-    email: "",
+    email: "your-email@mail.com",
     password: "",
   });
 
@@ -28,6 +28,9 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
   const { email, password } = userCredeintials;
 
+  const resetInput = (event) => {
+    event.target.value = "";
+  };
   return (
     <div className="sign-in">
       <h1 className="title">I already have an account</h1>
@@ -39,6 +42,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           name="email"
           label="Email"
           value={email}
+          onFocus={(event) => resetInput(event)}
           handleChange={handleChange}
           required
         />
