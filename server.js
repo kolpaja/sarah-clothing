@@ -4,6 +4,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import stripe from "stripe";
 
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 if (process.env.NODE_ENV !== "production") dotenv.config();
 
 const stripeApi = stripe(process.env.STRIPE_SECRET_KEY);
