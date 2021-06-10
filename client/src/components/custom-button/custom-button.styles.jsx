@@ -37,6 +37,9 @@ const isGoogleSignInStyles = css`
     border: none;
     transform: scale(1.1);
   }
+  &:active {
+    transform: translateY(5px);
+  }
 `;
 
 const getButtonStyles = (props) => {
