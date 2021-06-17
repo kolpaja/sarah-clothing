@@ -1,5 +1,7 @@
 import express from "express";
 import path from "path";
+import compression from 'compression'
+
 
 import dotenv from "dotenv";
 import stripe from "stripe";
@@ -17,6 +19,7 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(compression())
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
