@@ -7,12 +7,24 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+
+  @media (max-width: 700px) {
+    margin-bottom: 40px;
+    flex-direction: column;
+    align-items: center;
+  } ;
 `;
 
 export const LogoContainer = styled(Link)`
   font-family: "Dancing Script", cursive;
   font-size: 24px;
   padding: 5px;
+
+  @media (max-width: 700px) {
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
 `;
 
 export const ImgContainer = styled.img`
@@ -32,6 +44,18 @@ export const OptionsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1000px) {
+    width: 60%;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
 `;
 
 export const OptionLink = styled(Link)`

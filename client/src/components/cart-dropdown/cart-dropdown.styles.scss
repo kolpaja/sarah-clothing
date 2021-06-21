@@ -26,3 +26,10 @@
     margin-top: auto;
   }
 }
+
+@media (max-width: 576px){
+  .cart-dropdown{
+    top: 120px;
+    right: 40xp;
+  }
+}

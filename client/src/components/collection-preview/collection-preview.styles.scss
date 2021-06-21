@@ -12,10 +12,19 @@
       text-decoration: underline;
       cursor: pointer;
     }
+    
+    @media screen and (max-width: 900px) {
+      text-align: center;
+    }
   }
 
   .preview {
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 900px)  {
+      display: grid;
+      grid: auto-flow/ 1fr 1fr;
+    }
   }
 }
