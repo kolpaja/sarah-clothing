@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import compression from 'compression'
+import enforce from 'express-sslify'
 
 
 import dotenv from "dotenv";
@@ -22,8 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(compression())
 
 if (process.env.NODE_ENV === "production") {
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
   app.use(express.static(path.join(__dirname, "client/build")));
-
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client/build", "index.html"));
   });
@@ -35,7 +36,6 @@ app.post("/payment", (req, res) => {
     amount: req.body.amount,
     currency: "usd",
   };
-
   stripeApi.charges.create(body, (stripeErr, stripeRes) => {
     if (stripeErr) {
       res.status(500).send({ error: stripeErr });
@@ -45,6 +45,9 @@ app.post("/payment", (req, res) => {
   });
 });
 
+app.get("./service-worker.js", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "..", "build", "service-worker.js"))
+})
 app.listen(port, (error) => {
   if (error) throw error;
   console.log("Server running on port: ", port);
